@@ -37,13 +37,15 @@ class _BirthdayFeedState extends State<BirthdayFeed> {
                     ),
               title: Text(
                 (widget.birthdayBeat.birthdayUser?.firstName ?? "") + "'s Birthday Beat",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white,fontSize: 20),
               ),
               subtitle: Text(
                 '${DateFormat('MMM dd, yyyy').format(widget.birthdayBeat.createdAt)} | ${widget.birthdayBeat.birthdayWishes?.length ?? 0} peoples posted',
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: Colors.white70,fontSize: 15),
               ),
-              trailing: Icon(Icons.star_border, color: Colors.white),
+              trailing: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/Button 3.png'), // Replace with your image asset
+              ),
             ),
           ),
           SingleChildScrollView(
@@ -70,9 +72,13 @@ class _BirthdayFeedState extends State<BirthdayFeed> {
           Visibility(
             child: Row(
               children: [
-                Icon(Icons.person_add),
+                Icon(Icons.person_add,size: 25,),
                 Text(
                   'Connect with ${widget.birthdayBeat.birthdayUser?.firstName ?? ""} to comment',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

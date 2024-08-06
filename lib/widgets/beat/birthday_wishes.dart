@@ -38,37 +38,40 @@ class BirthdayWishesCard extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
             ),
+            SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                userImageUrl == "" ? Icon(Icons.person_2): CircleAvatar(
+                userImageUrl == "" ? Icon(Icons.person_2,): CircleAvatar(
                   radius: 20,
                   backgroundImage: NetworkImage(userImageUrl),
                   backgroundColor: Colors.transparent,
                 ),
-                Text(text),
+                SizedBox(height: 18,),
+                Text(text,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
                 Visibility(
-                  child: Icon(Icons.person_add),
+                  child: Icon(Icons.person_add,color: Colors.blue,),
                   visible: connectionStatus == "NOT_CONNECTED",
                 )
               ],
             ),
+            SizedBox(height: 18,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Row(
                   children: [
                     Text(emojiCodes),
-                    SizedBox(width: 5),
-                    Text('${emojiCount}'),
+                    SizedBox(width: 8),
+                    Text('${emojiCount}',style: TextStyle(color: Colors.blue),),
                   ],
                 ),
-                SizedBox(width: 20),
+                SizedBox(height: 10,),
                 Row(
                   children: [
-                    Icon(Icons.comment),
+                    Icon(Icons.comment,color: Colors.blue,),
                     SizedBox(width: 5),
-                    Text('${replyCount} Replies'),
+                    Text('${replyCount} Replies',style:TextStyle(color: Colors.blue),),
                   ],
                 ),
               ],
